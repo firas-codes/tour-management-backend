@@ -55,6 +55,8 @@ export const login = async (req, res) => {
       { expiresIn: "15d" }
     );
 
+    console.log(token);
+
     res
       .cookie("accessToken", token, {
         httpOnly: true,
