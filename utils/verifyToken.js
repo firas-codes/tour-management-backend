@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export const verifyToken = (req, res, next) => {
+  console.log(req.cookies);
   const token = req.cookies.accessToken;
   // console.log(req);
 
@@ -22,8 +23,8 @@ export const verifyToken = (req, res, next) => {
 };
 
 export const verifyUser = (req, res, next) => {
-  console.log(req.params);
-  console.log(req.user);
+  // console.log(req.params);
+  // console.log(req.user);
   verifyToken(req, res, next, () => {
     if (req.user.id === req.params.id || req.user.role === "admin") {
       next();
