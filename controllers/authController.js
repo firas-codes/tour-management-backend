@@ -62,6 +62,7 @@ export const login = async (req, res) => {
         httpOnly: true,
         expires: token.expiresIn,
         sameSite: "none",
+        secure:true
       })
       .status(200)
       .json({
